@@ -59,6 +59,7 @@ public class HandlebarsScriptEngineFactory implements ScriptEngineFactory {
                     break;
                 case '\\':
                     buf.append("\\\\");
+                    buf.append("\\\\");
                     break;
                 default:
                     buf.append(ch);
