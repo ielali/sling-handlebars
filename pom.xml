@@ -44,9 +44,9 @@
                         <Embed-Transitive>true</Embed-Transitive>
                         <Embed-Directory>META-INF/lib</Embed-Directory>
                         <Import-Package>
-                            org.slf4j;
-                            org.apache.log.*;
-                            org.apache.log4j;
+                            !org.abego.treelayout*;
+                            javax.jcr.*;version=1.0,
+                            *
                         </Import-Package>
 
                         <ScriptEngine-Name>${project.name}</ScriptEngine-Name>

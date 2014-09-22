@@ -1,6 +1,8 @@
 
 package com.sling.scripting.handlebars;
 
+import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.scripting.api.AbstractScriptEngineFactory;
 
 import javax.script.ScriptEngine;
@@ -8,6 +10,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+@Component(
+        metatype = false,
+        label="Apache Sling Handlebars Engine Factory",
+        description="Handlebars engine based on Jknack")
+@Service(value=javax.script.ScriptEngineFactory.class)
 public class HandlebarsScriptEngineFactory extends AbstractScriptEngineFactory {
     /**
      * The extensions of Handlebars scripts (value is "hbs").
