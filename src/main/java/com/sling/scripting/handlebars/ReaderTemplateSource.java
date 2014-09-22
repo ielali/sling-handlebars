@@ -1,4 +1,4 @@
-package com.sling.handlebars.script;
+package com.sling.scripting.handlebars;
 
 import com.github.jknack.handlebars.io.AbstractTemplateSource;
 
@@ -27,7 +27,7 @@ public class ReaderTemplateSource extends AbstractTemplateSource {
     private String filename;
 
     /**
-     * Creates a new {@link com.sling.handlebars.script.ReaderTemplateSource}.
+     * Creates a new {@link ReaderTemplateSource}.
      *
      * @param filename The file's name.
      * @param reader   The reader. Required.

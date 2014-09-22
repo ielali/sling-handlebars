@@ -1,1 +1,1 @@
-com.sling.handlebars.script.HandlebarsScriptEngineFactory
+com.sling.scripting.handlebars.HandlebarsScriptEngineFactory

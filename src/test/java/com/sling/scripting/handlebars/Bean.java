@@ -1,4 +1,4 @@
-package com.sling.handlebars.script;
+package com.sling.scripting.handlebars;
 
 /**
  * Created by imad.elali on 14/09/2014.

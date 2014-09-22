@@ -1,4 +1,4 @@
-package com.sling.handlebars.script;
+package com.sling.scripting.handlebars;
 
 import com.github.jknack.handlebars.Context;
 import com.github.jknack.handlebars.Handlebars;
@@ -13,13 +13,13 @@ import javax.script.*;
 
 import static org.junit.Assert.assertEquals;
 
-public class HandlebarScriptEngineTest {
+public class HandlebarsScriptEngineTest extends RepositoryTestBase {
 
     @Test
     public void testHandleBars() throws Exception {
         Handlebars handlebars = new Handlebars();
         Context context = Context
-                .newBuilder(new com.sling.handlebars.script.Bean())
+                .newBuilder(new Bean())
                 .resolver(
                         MethodValueResolver.INSTANCE,
                         MapValueResolver.INSTANCE,
@@ -37,12 +37,12 @@ public class HandlebarScriptEngineTest {
         ScriptEngineManager factory = new ScriptEngineManager();
         // create a JavaScript engine
         ScriptEngine engine = factory.getEngineByName("Handlebars");
-        ScriptContext context=new SimpleScriptContext();
+        ScriptContext context = new SimpleScriptContext();
         // evaluate JavaScript code from String
         SimpleBindings bindings = new SimpleBindings();
         bindings.put("context", new Bean());
-        bindings.put(HandlebarScriptEngine.STRING_OUTPUT_MODE,Boolean.TRUE);
-        context.setBindings(bindings,ScriptContext.ENGINE_SCOPE);
+        bindings.put(HandlebarsScriptEngine.STRING_OUTPUT_MODE, Boolean.TRUE);
+        context.setBindings(bindings, ScriptContext.ENGINE_SCOPE);
         assertEquals("Hello Mr: FirstName LastName age: 30!", engine.eval("Hello {{context.printFull}}!", context));
     }
 }
